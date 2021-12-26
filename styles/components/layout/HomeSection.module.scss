@@ -1,0 +1,58 @@
+@import "../../variables";
+
+.home-section {
+  min-height: 500px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 4rem;
+  box-sizing: border-box;
+
+  @include laptop {
+    padding-bottom: 1rem;
+  }
+
+  .home-title {
+    font-size: 3.5rem;
+
+    &:first-of-type {
+      display: block;
+    }
+
+    &:last-of-type {
+      border-right: 2px solid;
+      animation: blinkTextCursor 1s steps(40, jump-both) infinite normal;
+    }
+
+    @include tablet {
+      font-size: 4rem;
+    }
+
+    @include laptop {
+      font-size: 5rem;
+      &:first-of-type {
+        display: inline;
+      }
+    }
+
+    @include desktop {
+      font-size: 6rem;
+    }
+  }
+}
+
+.resume-btn {
+  margin-bottom: 2rem;
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgb(68, 68, 68);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
